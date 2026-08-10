@@ -50,6 +50,10 @@
           <div style="font-family:'Noto Serif TC',serif;font-size:clamp(28px,4.6vw,34px);font-weight:600;line-height:1.2">{{ t.name }}</div>
           <div style="font-size:14px;opacity:.55;margin-top:6px;letter-spacing:.03em">{{ t.nameSub }}</div>
           <div style="margin-top:18px;font-size:13.5px;line-height:1.95;opacity:.66;font-weight:300">{{ t.affil1 }}<br />{{ t.affil2 }}<br />{{ t.affil3 }}<br />{{ t.affil4 }}</div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(232,230,221,.12)">
+            <div style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#9ec9b2;margin-bottom:8px">{{ t.eduLabel }}</div>
+            <div style="font-size:13.5px;line-height:1.9;opacity:.66;font-weight:300">{{ t.eduDegree }}<br />{{ t.eduSchool }}</div>
+          </div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:9px;font-size:13px">
           <a href="mailto:hslee@ntnu.edu.tw" style="padding:10px 17px;border-radius:999px;background:#9ec9b2;color:#12211c;font-weight:500" style-hover="background:#ffffff;color:#12211c">{{ t.ctaMail }}</a>
@@ -117,7 +121,8 @@
       </div>
     </section>
 
-    <section id="research" style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+    <section id="research" style="border-top:1px solid rgba(232,230,221,.1);background:rgba(232,230,221,.02)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
       <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kResearch }}</div>
       <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 34px;line-height:1.4">{{ t.researchTitle }}</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px">
@@ -129,9 +134,10 @@
           </div>
         </sc-for>
       </div>
+      </div>
     </section>
 
-    <section id="career" style="border-top:1px solid rgba(232,230,221,.1);background:rgba(232,230,221,.02)">
+    <section id="career" style="border-top:1px solid rgba(232,230,221,.1)">
       <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
         <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kCareer }}</div>
         <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 36px;line-height:1.4">{{ t.careerTitle }}</h2>
@@ -235,15 +241,16 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9ec9b2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#9ec9b2&quot;,&quot;#c9b98a&quot;,&quot;#a8bcd6&quot;,&quot;#d6a8a8&quot;],&quot;section&quot;:&quot;外觀&quot;}}">
 const ZH = {
   langBtn: "EN",
-  navResearch: "研究方向", navCareer: "學經歷", navPubs: "發表論文", navProjects: "產學合作", navTeaching: "開設課程", navAwards: "獲獎", navNews: "新聞", navContact: "聯絡",
+  navResearch: "研究方向", navCareer: "經歷", navPubs: "發表論文", navProjects: "產學合作", navTeaching: "開設課程", navAwards: "獲獎", navNews: "新聞", navContact: "聯絡",
   name: "李鴻欣", nameSub: "Hung-Shin Lee, Ph.D.",
   affil1: "助理教授", affil2: "AI 跨域應用研究所", affil3: "跨域科技產業創新研究學院", affil4: "國立臺灣師範大學",
   ctaMail: "寫信給我",
   heroTitle: "讓機器聽懂並說出臺灣人所使用的每一種話",
   heroBody: "我的研究橫跨語音辨識、語音合成、語音翻譯、語音增強與品質評估、語者／語言辨識暨分段，以及以大型語言模型為核心的半雙工／全雙工對話式人工智慧。過去十多年往返於學術圈與產業界，投入台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。",
-  verseRef: "詩篇 19:1-4a",
+  verseRef: "聖經・詩篇 19:1-4a",
   kResearch: "Research", researchTitle: "五個彼此相連的研究主軸",
-  kCareer: "Experience", careerTitle: "學歷與經歷",
+  kCareer: "Experience", careerTitle: "經歷",
+  eduLabel: "學歷", eduDegree: "電機工程學博士", eduSchool: "國立臺灣大學",
   kPubs: "Publications", pubsTitle: "發表論文",
   pubsNote: "共 7 篇期刊論文與 57 篇會議論文。以下為代表性著作，可依年份篩選。",
   pubsFoot: "完整著作清單請見",
@@ -268,9 +275,10 @@ const EN = {
   ctaMail: "Email me",
   heroTitle: "Teaching machines to hear — and speak — every language used in Taiwan",
   heroBody: "My research spans speech recognition, speech synthesis, speech translation, speech enhancement and quality assessment, speaker/language recognition and diarization, and half-duplex / full-duplex conversational AI built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use.",
-  verseRef: "Psalm 19:1-4a",
+  verseRef: "The Bible・Psalm 19:1-4a",
   kResearch: "Research", researchTitle: "Five interconnected research directions",
-  kCareer: "Experience", careerTitle: "Education & Experience",
+  kCareer: "Experience", careerTitle: "Experience",
+  eduLabel: "Education", eduDegree: "Ph.D. in Electrical Engineering", eduSchool: "National Taiwan University",
   kPubs: "Publications", pubsTitle: "Publications",
   pubsNote: "7 journal articles and 57 conference papers. Selected works below, filterable by year.",
   pubsFoot: "For the complete list, see",
@@ -299,8 +307,7 @@ const PILLARS = [
 const CAREER = [
   { years: "2022 – 2026", url: "https://ithuan.tw", link: ["意傳科技", "Ì-THUÂN KHO-KI"], tail: ["合作）、客語語音系統（與國立聯合大學張陳基教授合作），並推出 AuraCast、NovaCast 等串流語音與影像增強產品。", "), Hakka speech systems (with Prof. Chen-Chi Chang, NUU), and shipped AuraCast and NovaCast for streaming audio and video enhancement."], zh: ["AI 工程師（業界）", "聯和科創股份有限公司　·　諾思資訊股份有限公司", "主導族語 AI 計畫（與"], en: ["AI Engineer (Industry)", "United Link Co., Ltd. · North Co., Ltd.", "Led the Formosan-language AI programme (with "] },
   { years: "2021 – 2022", zh: ["博士後研究員", "中央研究院　資訊科學研究所", "多語（華語、台語、英語）語音辨識、語者分段與辨識系統，應用於司法、醫療與媒體查核場域。"], en: ["Postdoctoral Researcher", "Institute of Information Science, Academia Sinica", "Multilingual (Mandarin, Taiwanese, English) ASR and speaker diarization deployed in judicial, medical, and fact-checking settings."] },
-  { years: "2009 – 2021", zh: ["研究助理", "中央研究院　資訊科學研究所", "十二年間投入強健語音辨識、語者與語言驗證、語音增強與分離、語音翻譯、偽造偵測等研究，並指導大學部與研究所學生。"], en: ["Research Assistant", "Institute of Information Science, Academia Sinica", "Twelve years across robust ASR, speaker/language verification, speech enhancement and separation, speech translation, and spoofing detection, while mentoring students."] },
-  { years: "2021", url: "https://homepage.iis.sinica.edu.tw/pages/whm/index_zh.html", link: ["王新民研究員", "Dr. Hsin-Min Wang"], tail: ["）。", ")."], zh: ["電機工程學博士", "國立臺灣大學", "論文：進階神經架構於語言、語者暨語音辨識（指導："], en: ["Ph.D. in Electrical Engineering", "National Taiwan University", "Dissertation: Advanced Neural Structures for Language, Speaker, and Speech Recognition (advisor: "] }
+  { years: "2009 – 2021", zh: ["研究助理", "中央研究院　資訊科學研究所", "十二年間投入強健語音辨識、語者與語言驗證、語音增強與分離、語音翻譯、偽造偵測等研究，並指導大學部與研究所學生。"], en: ["Research Assistant", "Institute of Information Science, Academia Sinica", "Twelve years across robust ASR, speaker/language verification, speech enhancement and separation, speech translation, and spoofing detection, while mentoring students."] }
 ];
 
 const PUBS = [
