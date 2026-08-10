@@ -55,6 +55,7 @@
           <a href="mailto:hslee@ntnu.edu.tw" style="padding:10px 17px;border-radius:999px;background:#9ec9b2;color:#12211c;font-weight:500" style-hover="background:#ffffff;color:#12211c">{{ t.ctaMail }}</a>
           <a href="https://scholar.google.com/citations?user=t4WKLegAAAAJ" target="_blank" rel="noopener" style="padding:10px 17px;border-radius:999px;border:1px solid rgba(232,230,221,.28);color:#e8e6dd" style-hover="border-color:rgba(232,230,221,.75)">Google Scholar</a>
           <a href="https://linkedin.com/in/hungshinlee" target="_blank" rel="noopener" style="padding:10px 17px;border-radius:999px;border:1px solid rgba(232,230,221,.28);color:#e8e6dd" style-hover="border-color:rgba(232,230,221,.75)">LinkedIn</a>
+          <a href="https://huggingface.co/formospeech" target="_blank" rel="noopener" style="padding:10px 17px;border-radius:999px;border:1px solid rgba(232,230,221,.28);color:#e8e6dd" style-hover="border-color:rgba(232,230,221,.75)">Hugging Face</a>
         </div>
       </div>
       <div style="flex:999 1 420px;min-width:0">
@@ -62,7 +63,7 @@
         <p style="font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;max-width:54ch;margin:0;font-weight:300;opacity:.76;text-wrap:pretty">{{ t.heroBody }}</p>
         <blockquote style="margin:clamp(32px,4vw,48px) 0 0;padding:24px clamp(20px,3vw,30px);border-left:2px solid rgba(158,201,178,.55);background:rgba(232,230,221,.045);border-radius:0 4px 4px 0">
           <sc-if value="{{ isZh }}" hint-placeholder-val="{{ true }}">
-            <p style="font-family:'Noto Serif TC',serif;font-size:clamp(15px,1.6vw,19px);line-height:2;margin:0;opacity:.88;text-wrap:pretty;font-weight:400">諸天<strong style="font-weight:700;color:#c9e3d4">述說</strong>上帝的榮耀，穹蒼<strong style="font-weight:700;color:#c9e3d4">傳揚</strong>他手的作為。<br />這日到那日發出<strong style="font-weight:700;color:#c9e3d4">言語</strong>，這夜到那夜傳出知識。<br /><strong style="font-weight:700;color:#c9e3d4">無言無語</strong>，也無<strong style="font-weight:700;color:#c9e3d4">聲音</strong>可<strong style="font-weight:700;color:#c9e3d4">聽</strong>。<br />它們的<strong style="font-weight:700;color:#c9e3d4">聲浪</strong>傳遍天下，它們的<strong style="font-weight:700;color:#c9e3d4">言語</strong>傳到地極。</p>
+            <p style="font-family:'Noto Serif TC',serif;font-size:clamp(15px,1.6vw,19px);line-height:2;margin:0;opacity:.88;text-wrap:pretty;font-weight:400">諸天<strong style="font-weight:700;color:#c9e3d4">述說</strong>上帝的榮耀，穹蒼<strong style="font-weight:700;color:#c9e3d4">傳揚</strong>祂手的作為。<br />這日到那日發出<strong style="font-weight:700;color:#c9e3d4">言語</strong>，這夜到那夜傳出知識。<br /><strong style="font-weight:700;color:#c9e3d4">無言無語</strong>，也無<strong style="font-weight:700;color:#c9e3d4">聲音</strong>可<strong style="font-weight:700;color:#c9e3d4">聽</strong>。<br />它們的<strong style="font-weight:700;color:#c9e3d4">聲浪</strong>傳遍天下，它們的<strong style="font-weight:700;color:#c9e3d4">言語</strong>傳到地極。</p>
           </sc-if>
           <sc-if value="{{ isEn }}" hint-placeholder-val="{{ true }}">
             <p style="font-family:'Noto Serif TC',serif;font-size:clamp(15px,1.6vw,19px);line-height:2;margin:0;opacity:.88;text-wrap:pretty;font-weight:400">The heavens <strong style="font-weight:700;color:#c9e3d4">declare</strong> the glory of God, and the expanse <strong style="font-weight:700;color:#c9e3d4">proclaims</strong> the work of his hands.<br />Day after day they pour out <strong style="font-weight:700;color:#c9e3d4">speech</strong>; night after night they communicate knowledge.<br />There is <strong style="font-weight:700;color:#c9e3d4">no speech</strong>, there are <strong style="font-weight:700;color:#c9e3d4">no words</strong>; their <strong style="font-weight:700;color:#c9e3d4">voice</strong> is not <strong style="font-weight:700;color:#c9e3d4">heard</strong>. Their <strong style="font-weight:700;color:#c9e3d4">message</strong> has gone out to all the earth,<br />and their <strong style="font-weight:700;color:#c9e3d4">words</strong> to the ends of the world.</p>
@@ -77,10 +78,10 @@
         <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kTeaching }}</div>
         <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 18px;line-height:1.4">{{ t.teachingTitle }}</h2>
         <sc-if value="{{ isZh }}" hint-placeholder-val="{{ true }}">
-          <p style="font-size:clamp(15px,1.6vw,17px);line-height:2.05;font-weight:300;opacity:.78;margin:0 0 34px;max-width:58ch;text-wrap:pretty">我期待全面提升學生的 <strong style="font-weight:700;color:#c9e3d4">AI 智商</strong>與人文情懷。所謂 <strong style="font-weight:700;color:#c9e3d4">AI 智商</strong>，是指知道如何與 AI 互動、把 AI 工具用到極致，用它補足自己原本不足的知識與能力；而人文情懷，是知道一個系統該為誰而做、在什麼情境下會失效，以及當它出錯時，誰會承擔後果。兩者要一起長大，技術才有意義。</p>
+          <p style="font-size:clamp(15px,1.6vw,17px);line-height:2.05;font-weight:300;opacity:.78;margin:0 0 34px;max-width:58ch;text-wrap:pretty">期待學生能全面提升 <strong style="font-weight:700;color:#c9e3d4">AI 智商</strong>與人文情懷。所謂 <strong style="font-weight:700;color:#c9e3d4">AI 智商</strong>，是指知道如何與 AI 互動、將 AI 工具用得巧妙，用它補足自己原本不足的知識與能力；而人文情懷，是知道一個系統該為誰而做、在什麼情境下會失效，以及當它出錯時，誰會承擔後果。兩者要一起長大，技術才有意義。</p>
         </sc-if>
         <sc-if value="{{ isEn }}" hint-placeholder-val="{{ true }}">
-          <p style="font-size:clamp(15px,1.6vw,17px);line-height:2.05;font-weight:300;opacity:.78;margin:0 0 34px;max-width:58ch;text-wrap:pretty">My aim is to raise both my students’ <strong style="font-weight:700;color:#c9e3d4">AI intelligence</strong> and their humanistic sensibility. By <strong style="font-weight:700;color:#c9e3d4">AI intelligence</strong> I mean knowing how to work with AI — pushing these tools to their limit and using them to make up for what one does not yet know or cannot yet do. The humanistic side is knowing who a system is for, where it will fail, and who bears the consequences when it does. Technology means something only when the two grow together.</p>
+          <p style="font-size:clamp(15px,1.6vw,17px);line-height:2.05;font-weight:300;opacity:.78;margin:0 0 34px;max-width:58ch;text-wrap:pretty">My aim is to raise both my students’ <strong style="font-weight:700;color:#c9e3d4">AI intelligence</strong> and their humanistic sensibility. By <strong style="font-weight:700;color:#c9e3d4">AI intelligence</strong> I mean knowing how to work with AI — using these tools deftly and using them to make up for what one does not yet know or cannot yet do. The humanistic side is knowing who a system is for, where it will fail, and who bears the consequences when it does. Technology means something only when the two grow together.</p>
         </sc-if>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px">
           <sc-for list="{{ courses }}" as="c" hint-placeholder-count="2">
@@ -239,7 +240,7 @@ const ZH = {
   affil1: "助理教授", affil2: "AI 跨域應用研究所", affil3: "跨域科技產業創新研究學院", affil4: "國立臺灣師範大學",
   ctaMail: "寫信給我",
   heroTitle: "讓機器聽懂並說出臺灣人所使用的每一種話",
-  heroBody: "我的研究橫跨語音辨識、語音合成、語音翻譯、語音增強與品質評估、語者／語言辨識暨分段，以及以大型語言模型為核心的半雙工／全雙工對話式人工智慧。過去十多年，我在學術圈與產業界之間往返，投入台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。現在，我把這些經驗帶回校園。",
+  heroBody: "我的研究橫跨語音辨識、語音合成、語音翻譯、語音增強與品質評估、語者／語言辨識暨分段，以及以大型語言模型為核心的半雙工／全雙工對話式人工智慧。過去十多年往返於學術圈與產業界，投入台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。",
   verseRef: "詩篇 19:1-4a",
   kResearch: "Research", researchTitle: "五個彼此相連的研究主軸",
   kCareer: "Experience", careerTitle: "學歷與經歷",
@@ -248,14 +249,14 @@ const ZH = {
   pubsFoot: "完整著作清單請見",
   corrAuthor: "通訊作者",
   kProjects: "Projects", projectsTitle: "研究計畫與產學合作", pitchLead: "如果貴公司手上有一個技術問題，答案不在現成的套件或 API 裡，很歡迎與我聊聊。",
-  pitchBody: "我做的事情，簡單說是把訊號變成可用的資訊——語音、文字或影像都在範圍內，離線批次處理或即時串流也都做過。十六年來我在學術圈與產業界之間往返，經手過辨識、合成、增強、偵測，以及以大型語言模型為核心的系統；這些工作的共同點是，它們最後都必須在真實的資料量、算力與延遲條件下穩定運作，而不只是在論文裡成立。也因為如此，我不會預設題目一定要落在我熟悉的領域：只要問題定義得夠清楚，值得用工程與研究一起面對，我都很願意投入。無論是產學合作、技術諮詢、委託研究、共同申請計畫，或只是想先確認一個想法可不可行，都歡迎來信，我們一起把問題看清楚。",
+  pitchBody: "簡單說，就是把訊號變成可用的資訊——語音、文字或影像都在範圍內，離線批次處理或即時串流也都做過。十六年來往返於學術圈與產業界，經手過辨識、合成、增強、偵測，以及以大型語言模型為核心的系統；這些工作的共同點是，它們最後都必須在真實的資料量、算力與延遲條件下穩定運作，而不只是在論文裡成立。也因為如此，題目不必預設落在既有的熟悉領域：只要問題定義得夠清楚，值得用工程與研究一起面對，我都很願意投入。無論是產學合作、技術諮詢、委託研究、共同申請計畫，或只是想先確認一個想法可不可行，都歡迎來信，我們一起把問題看清楚。",
   pitchCta: "聊聊合作的可能",
   pitchItems: ["語音、語言與影像的 AI 系統開發", "即時串流與離線批次處理", "訊號增強、還原與品質評估", "大型語言模型的實際應用導入", "技術諮詢、委託研究與共同提案"],
   kTeaching: "Teaching", teachingTitle: "開設課程與教學理念",
   kAwards: "Honors", awardsTitle: "獲獎與榮譽",
   kNews: "In the Press", newsTitle: "媒體報導",
   kContact: "Contact", contactTitle: "歡迎與我聯絡",
-  recruit: "我長期招收對語音、對話與大型語言模型有興趣的碩、博士生與專題生。無論你想做的是本土語言的語音技術、語音品質評估，或是把模型真的變成一個能用的產品，都歡迎寫信告訴我你想解決什麼問題——不需要先準備好完整的研究計畫。",
+  recruit: "長期招收對語音、對話與大型語言模型有興趣的碩、博士生與專題生。無論你想做的是本土語言的語音技術、語音品質評估，或是把模型真的變成一個能用的產品，都歡迎寫信告訴我你想解決什麼問題——不需要先準備好完整的研究計畫。",
   office: "研究室", officeAddr: "國立臺灣師範大學\n跨域科技產業創新研究學院\nAI 跨域應用研究所",
   footer: "© 2026 李鴻欣 Hung-Shin Lee · 國立臺灣師範大學 AI 跨域應用研究所"
 };
@@ -266,7 +267,7 @@ const EN = {
   affil1: "Assistant Professor", affil2: "Graduate Institute of AI Interdisciplinary Applied Technology", affil3: "College of Interdisciplinary Industry-Academia Innovation", affil4: "National Taiwan Normal University",
   ctaMail: "Email me",
   heroTitle: "Teaching machines to hear — and speak — every language used in Taiwan",
-  heroBody: "My research spans speech recognition, speech synthesis, speech translation, speech enhancement and quality assessment, speaker/language recognition and diarization, and half-duplex / full-duplex conversational AI built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use. I now bring that experience back to the classroom.",
+  heroBody: "My research spans speech recognition, speech synthesis, speech translation, speech enhancement and quality assessment, speaker/language recognition and diarization, and half-duplex / full-duplex conversational AI built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use.",
   verseRef: "Psalm 19:1-4a",
   kResearch: "Research", researchTitle: "Five interconnected research directions",
   kCareer: "Experience", careerTitle: "Education & Experience",
@@ -275,7 +276,7 @@ const EN = {
   pubsFoot: "For the complete list, see",
   corrAuthor: "Corresponding",
   kProjects: "Projects", projectsTitle: "Projects & Industry Collaboration", pitchLead: "If your team is holding a technical problem whose answer isn't in an off-the-shelf library or API, I'd be glad to talk it through.",
-  pitchBody: "What I do, put simply, is turn signals into usable information — speech, text, or images; offline batch processing or real-time streaming. Sixteen years between academia and industry have taken me through recognition, synthesis, enhancement, detection, and systems built around large language models. What those projects share is that each of them ultimately had to run reliably under real limits on data, compute, and latency — not only in a paper. For that reason I don't assume a project has to sit inside my own research topics: if the problem is clearly defined and worth facing with both engineering and research, I'd be glad to take it on. Industry collaboration, technical consulting, contract research, joint proposals — or simply a first check on whether an idea is feasible — you're very welcome to write.",
+  pitchBody: "What I do, put simply, is turn signals into usable information — speech, text, or images; offline batch processing or real-time streaming. Sixteen years between academia and industry have taken me through recognition, synthesis, enhancement, detection, and systems built around large language models. What those projects share is that each of them ultimately had to run reliably under real limits on data, compute, and latency — not only in a paper. For that reason I don't assume a project has to sit inside my own research topics: if the problem is clearly defined and worth facing with both engineering and research, I'd be glad to take it on. Industry collaboration, technical consulting, contract research, joint proposals — or simply a first check on whether an idea is feasible — you're very welcome to write, and we can look at the problem together.",
   pitchCta: "Let's talk about working together",
   pitchItems: ["AI systems for speech, language, and vision", "Real-time streaming and offline batch pipelines", "Signal enhancement, restoration, and quality assessment", "Putting large language models into production", "Consulting, contract research, joint proposals"],
   kTeaching: "Teaching", teachingTitle: "Courses & Teaching Philosophy",
