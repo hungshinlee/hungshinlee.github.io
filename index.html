@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>李鴻欣 Hung-Shin Lee｜國立臺灣師範大學 AI 跨域應用研究所</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin:0; background:#12211c; color:#e8e6dd; font-family:'Noto Sans TC',system-ui,-apple-system,sans-serif; overflow-x:hidden; }
+  a { color:#9ec9b2; text-decoration:none; }
+  a:hover { color:#ffffff; }
+  ::selection { background:#2f5f4d; color:#fff; }
+  nav::-webkit-scrollbar { display:none; }
+</style>
+</helmet>
+<div style="background:#12211c;min-height:100vh">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(18,33,28,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,230,221,.12)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:0 clamp(16px,4vw,40px);height:58px">
+      <a href="#top" style="font-family:'Noto Serif TC',serif;font-size:16px;font-weight:600;color:#e8e6dd;white-space:nowrap;flex:0 0 auto">李鴻欣<span style="font-weight:300;opacity:.5;margin-left:8px;font-size:13px;letter-spacing:.03em">Hung-Shin Lee</span></a>
+      <nav style="flex:1 1 auto;display:flex;gap:20px;overflow-x:auto;white-space:nowrap;font-size:13.5px;scrollbar-width:none;padding:0 4px;-webkit-overflow-scrolling:touch">
+        <a href="#teaching" style="color:rgba(232,230,221,.66)">{{ t.navTeaching }}</a>
+        <a href="#projects" style="color:rgba(232,230,221,.66)">{{ t.navProjects }}</a>
+        <a href="#research" style="color:rgba(232,230,221,.66)">{{ t.navResearch }}</a>
+        <a href="#career" style="color:rgba(232,230,221,.66)">{{ t.navCareer }}</a>
+        <a href="#publications" style="color:rgba(232,230,221,.66)">{{ t.navPubs }}</a>
+        <a href="#awards" style="color:rgba(232,230,221,.66)">{{ t.navAwards }}</a>
+        <a href="#news" style="color:rgba(232,230,221,.66)">{{ t.navNews }}</a>
+        <a href="#contact" style="color:rgba(232,230,221,.66)">{{ t.navContact }}</a>
+      </nav>
+      <button onClick="{{ toggleLang }}" style="flex:0 0 auto;font-family:inherit;font-size:12.5px;letter-spacing:.06em;padding:7px 14px;border-radius:999px;border:1px solid rgba(232,230,221,.28);background:transparent;color:#e8e6dd;cursor:pointer" style-hover="border-color:rgba(232,230,221,.7)">{{ t.langBtn }}</button>
+    </div>
+  </header>
+
+  <main id="top" style="padding-top:58px">
+
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(44px,7vw,90px) clamp(20px,4vw,40px) clamp(30px,4vw,50px);display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:flex-start">
+      <div style="flex:1 1 240px;max-width:320px;display:flex;flex-direction:column;gap:20px">
+        <div style="width:clamp(132px,26vw,168px);height:clamp(132px,26vw,168px);border-radius:50%;overflow:hidden;background:#1d3229;border:1px solid rgba(232,230,221,.16)"><img src="photo.jpg" alt="李鴻欣 Hung-Shin Lee" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block" /></div>
+        <div>
+          <div style="font-family:'Noto Serif TC',serif;font-size:clamp(28px,4.6vw,34px);font-weight:600;line-height:1.2">{{ t.name }}</div>
+          <div style="font-size:14px;opacity:.55;margin-top:6px;letter-spacing:.03em">{{ t.nameSub }}</div>
+          <div style="margin-top:18px;font-size:13.5px;line-height:1.95;opacity:.66;font-weight:300">{{ t.affil1 }}<br />{{ t.affil2 }}<br />{{ t.affil3 }}<br />{{ t.affil4 }}</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-size:13px">
+          <a href="mailto:hslee@ntnu.edu.tw" style="padding:10px 17px;border-radius:999px;background:#9ec9b2;color:#12211c;font-weight:500" style-hover="background:#ffffff;color:#12211c">{{ t.ctaMail }}</a>
+          <a href="https://scholar.google.com/citations?user=t4WKLegAAAAJ" target="_blank" rel="noopener" style="padding:10px 17px;border-radius:999px;border:1px solid rgba(232,230,221,.28);color:#e8e6dd" style-hover="border-color:rgba(232,230,221,.75)">Google Scholar</a>
+          <a href="https://linkedin.com/in/hungshinlee" target="_blank" rel="noopener" style="padding:10px 17px;border-radius:999px;border:1px solid rgba(232,230,221,.28);color:#e8e6dd" style-hover="border-color:rgba(232,230,221,.75)">LinkedIn</a>
+        </div>
+      </div>
+      <div style="flex:999 1 420px;min-width:0">
+        <h1 style="font-family:'Noto Serif TC',serif;font-weight:600;font-size:clamp(30px,5.2vw,58px);line-height:1.3;margin:0 0 26px;max-width:19ch;text-wrap:pretty">{{ t.heroTitle }}</h1>
+        <p style="font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;max-width:54ch;margin:0;font-weight:300;opacity:.76;text-wrap:pretty">{{ t.heroBody }}</p>
+        <blockquote style="margin:clamp(32px,4vw,48px) 0 0;padding:24px clamp(20px,3vw,30px);border-left:2px solid rgba(158,201,178,.55);background:rgba(232,230,221,.045);border-radius:0 4px 4px 0">
+          <sc-if value="{{ isZh }}" hint-placeholder-val="{{ true }}">
+            <p style="font-family:'Noto Serif TC',serif;font-size:clamp(15px,1.6vw,19px);line-height:2;margin:0;opacity:.88;text-wrap:pretty;font-weight:400">諸天<strong style="font-weight:700;color:#c9e3d4">述說</strong>上帝的榮耀，穹蒼<strong style="font-weight:700;color:#c9e3d4">傳揚</strong>他手的作為。<br />這日到那日發出<strong style="font-weight:700;color:#c9e3d4">言語</strong>，這夜到那夜傳出知識。<br /><strong style="font-weight:700;color:#c9e3d4">無言無語</strong>，也無<strong style="font-weight:700;color:#c9e3d4">聲音</strong>可<strong style="font-weight:700;color:#c9e3d4">聽</strong>。<br />它們的<strong style="font-weight:700;color:#c9e3d4">聲浪</strong>傳遍天下，它們的<strong style="font-weight:700;color:#c9e3d4">言語</strong>傳到地極。</p>
+          </sc-if>
+          <sc-if value="{{ isEn }}" hint-placeholder-val="{{ true }}">
+            <p style="font-family:'Noto Serif TC',serif;font-size:clamp(15px,1.6vw,19px);line-height:2;margin:0;opacity:.88;text-wrap:pretty;font-weight:400">The heavens <strong style="font-weight:700;color:#c9e3d4">declare</strong> the glory of God, and the expanse <strong style="font-weight:700;color:#c9e3d4">proclaims</strong> the work of his hands.<br />Day after day they pour out <strong style="font-weight:700;color:#c9e3d4">speech</strong>; night after night they communicate knowledge.<br />There is <strong style="font-weight:700;color:#c9e3d4">no speech</strong>, there are <strong style="font-weight:700;color:#c9e3d4">no words</strong>; their <strong style="font-weight:700;color:#c9e3d4">voice</strong> is not <strong style="font-weight:700;color:#c9e3d4">heard</strong>. Their <strong style="font-weight:700;color:#c9e3d4">message</strong> has gone out to all the earth,<br />and their <strong style="font-weight:700;color:#c9e3d4">words</strong> to the ends of the world.</p>
+          </sc-if>
+          <div style="margin-top:12px;font-size:12.5px;letter-spacing:.1em;opacity:.5">{{ t.verseRef }}</div>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="teaching" style="border-top:1px solid rgba(232,230,221,.1);background:rgba(232,230,221,.02);scroll-margin-top:70px">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px)">
+        <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kTeaching }}</div>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 18px;line-height:1.4">{{ t.teachingTitle }}</h2>
+        <sc-if value="{{ isZh }}" hint-placeholder-val="{{ true }}">
+          <p style="font-size:clamp(15px,1.6vw,17px);line-height:2.05;font-weight:300;opacity:.78;margin:0 0 34px;max-width:58ch;text-wrap:pretty">我期待全面提升學生的 <strong style="font-weight:700;color:#c9e3d4">AI 智商</strong>與人文情懷。所謂 <strong style="font-weight:700;color:#c9e3d4">AI 智商</strong>，是指知道如何與 AI 互動、把 AI 工具用到極致，用它補足自己原本不足的知識與能力；而人文情懷，是知道一個系統該為誰而做、在什麼情境下會失效，以及當它出錯時，誰會承擔後果。兩者要一起長大，技術才有意義。</p>
+        </sc-if>
+        <sc-if value="{{ isEn }}" hint-placeholder-val="{{ true }}">
+          <p style="font-size:clamp(15px,1.6vw,17px);line-height:2.05;font-weight:300;opacity:.78;margin:0 0 34px;max-width:58ch;text-wrap:pretty">My aim is to raise both my students’ <strong style="font-weight:700;color:#c9e3d4">AI intelligence</strong> and their humanistic sensibility. By <strong style="font-weight:700;color:#c9e3d4">AI intelligence</strong> I mean knowing how to work with AI — pushing these tools to their limit and using them to make up for what one does not yet know or cannot yet do. The humanistic side is knowing who a system is for, where it will fail, and who bears the consequences when it does. Technology means something only when the two grow together.</p>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px">
+          <sc-for list="{{ courses }}" as="c" hint-placeholder-count="2">
+            <div style="border:1px solid rgba(232,230,221,.16);border-radius:4px;padding:28px 24px">
+              <div style="font-size:12.5px;letter-spacing:.1em;color:#9ec9b2;margin-bottom:10px">{{ c.term }}</div>
+              <div style="font-family:'Noto Serif TC',serif;font-size:21px;line-height:1.45">{{ c.zh }}</div>
+              <div style="font-size:14px;opacity:.55;margin-top:9px;font-weight:300;line-height:1.65">{{ c.en }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="border-top:1px solid rgba(232,230,221,.1)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+        <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kProjects }}</div>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 34px;line-height:1.4">{{ t.projectsTitle }}</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);border:1px solid rgba(158,201,178,.28);border-radius:4px;padding:clamp(28px,4vw,44px) clamp(22px,3vw,40px);background:rgba(158,201,178,.05)">
+          <div style="flex:1 1 380px;min-width:0">
+            <p style="font-size:clamp(15.5px,1.7vw,18px);line-height:2;margin:0 0 18px;font-weight:300;opacity:.85;text-wrap:pretty">{{ t.pitchLead }}</p>
+            <p style="font-size:14.5px;line-height:2;margin:0;font-weight:300;opacity:.62;text-wrap:pretty">{{ t.pitchBody }}</p>
+            <a href="mailto:hslee@ntnu.edu.tw" style="display:inline-block;margin-top:24px;padding:11px 20px;border-radius:999px;background:#9ec9b2;color:#12211c;font-size:13.5px;font-weight:500" style-hover="background:#ffffff">{{ t.pitchCta }}</a>
+          </div>
+          <div style="flex:1 1 250px;min-width:0;display:flex;flex-direction:column;gap:1px">
+            <sc-for list="{{ pitchItems }}" as="i" hint-placeholder-count="5">
+              <div style="padding:13px 0;border-bottom:1px solid rgba(232,230,221,.12);font-size:14px;font-weight:300;line-height:1.7;display:flex;gap:14px">
+                <span style="color:#9ec9b2;opacity:.7;font-size:12px;padding-top:3px">{{ i.num }}</span>
+                <span style="opacity:.78">{{ i.text }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+      <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kResearch }}</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 34px;line-height:1.4">{{ t.researchTitle }}</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="5">
+          <div style="border:1px solid rgba(232,230,221,.16);border-radius:4px;padding:24px 22px;background:rgba(232,230,221,.025)" style-hover="border-color:rgba(158,201,178,.5);background:rgba(232,230,221,.05)">
+            <div style="font-size:11.5px;letter-spacing:.14em;opacity:.4;margin-bottom:10px">{{ p.num }}</div>
+            <div style="font-family:'Noto Serif TC',serif;font-size:19.5px;margin-bottom:10px;line-height:1.4">{{ p.title }}</div>
+            <div style="font-size:13.5px;line-height:1.9;opacity:.62;font-weight:300;text-wrap:pretty">{{ p.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="career" style="border-top:1px solid rgba(232,230,221,.1);background:rgba(232,230,221,.02)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+        <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kCareer }}</div>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 36px;line-height:1.4">{{ t.careerTitle }}</h2>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ career }}" as="c" hint-placeholder-count="5">
+            <div style="display:flex;flex-wrap:wrap;gap:6px 28px;padding:20px 0;border-bottom:1px solid rgba(232,230,221,.1)">
+              <div style="flex:0 0 150px;font-size:13.5px;letter-spacing:.04em;opacity:.5;font-variant-numeric:tabular-nums">{{ c.years }}</div>
+              <div style="flex:1 1 300px;min-width:0">
+                <div style="font-family:'Noto Serif TC',serif;font-size:18.5px;line-height:1.5">{{ c.role }}</div>
+                <div style="font-size:14px;opacity:.6;margin-top:5px;font-weight:300;line-height:1.75">{{ c.org }}</div>
+                <div style="font-size:13.5px;opacity:.5;margin-top:9px;font-weight:300;line-height:1.85;max-width:62ch;text-wrap:pretty">{{ c.note }}<sc-if value="{{ c.linkText }}" hint-placeholder-val="{{ true }}"><a href="{{ c.linkUrl }}" target="_blank" rel="noopener">{{ c.linkText }}</a>{{ c.noteTail }}</sc-if></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+      <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kPubs }}</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 10px;line-height:1.4">{{ t.pubsTitle }}</h2>
+      <p style="font-size:14px;opacity:.55;font-weight:300;margin:0 0 26px;line-height:1.9;max-width:60ch">{{ t.pubsNote }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+        <sc-for list="{{ yearFilters }}" as="y" hint-placeholder-count="6">
+          <button onClick="{{ y.onClick }}" style="font-family:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer;border:1px solid {{ y.border }};background:{{ y.bg }};color:{{ y.color }}">{{ y.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ pubs }}" as="p" hint-placeholder-count="8">
+          <div style="padding:19px 0;border-top:1px solid rgba(232,230,221,.1);display:flex;flex-wrap:wrap;gap:6px 24px">
+            <div style="flex:0 0 58px;font-size:14px;opacity:.42;font-variant-numeric:tabular-nums;padding-top:2px">{{ p.year }}</div>
+            <div style="flex:1 1 320px;min-width:0">
+              <a href="{{ p.url }}" target="_blank" rel="noopener" style="font-family:'Noto Serif TC',serif;font-size:17px;line-height:1.55;color:#e8e6dd;display:inline-block" style-hover="color:#9ec9b2">{{ p.title }}</a>
+              <div style="font-size:13px;opacity:.5;margin-top:7px;font-weight:300;line-height:1.7">{{ p.pre }}<strong style="font-weight:600;opacity:1;color:#e8e6dd">H.-S. Lee</strong>{{ p.post }}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px">
+                <span style="font-size:12px;letter-spacing:.05em;padding:4px 10px;border-radius:3px;background:rgba(158,201,178,.14);color:#9ec9b2">{{ p.venue }}</span>
+                <sc-if value="{{ p.corr }}" hint-placeholder-val="{{ true }}"><span style="font-size:11.5px;letter-spacing:.06em;padding:4px 9px;border-radius:3px;border:1px solid rgba(232,230,221,.2);opacity:.55">{{ t.corrAuthor }}</span></sc-if>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="border-top:1px solid rgba(232,230,221,.1);padding-top:22px;margin-top:2px;font-size:13.5px;opacity:.55;font-weight:300;line-height:1.9">{{ t.pubsFoot }} <a href="https://scholar.google.com/citations?user=t4WKLegAAAAJ" target="_blank" rel="noopener">Google Scholar</a></div>
+    </section>
+
+    <section id="awards" style="border-top:1px solid rgba(232,230,221,.1);background:rgba(232,230,221,.02)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+        <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kAwards }}</div>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 34px;line-height:1.4">{{ t.awardsTitle }}</h2>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ awards }}" as="a" hint-placeholder-count="6">
+            <div style="display:flex;flex-wrap:wrap;gap:6px 24px;padding:18px 0;border-top:1px solid rgba(232,230,221,.1)">
+              <div style="flex:0 0 58px;font-size:14px;opacity:.42;font-variant-numeric:tabular-nums">{{ a.year }}</div>
+              <div style="flex:1 1 300px;min-width:0">
+                <div style="font-size:16.5px;line-height:1.6;font-family:'Noto Serif TC',serif">{{ a.title }}</div>
+                <div style="font-size:13px;opacity:.5;margin-top:6px;font-weight:300;line-height:1.7">{{ a.event }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" style="max-width:1180px;margin:0 auto;padding:clamp(46px,6vw,84px) clamp(20px,4vw,40px);scroll-margin-top:70px">
+      <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kNews }}</div>
+      <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 30px;line-height:1.4">{{ t.newsTitle }}</h2>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ news }}" as="n" hint-placeholder-count="6">
+          <a href="{{ n.url }}" target="_blank" rel="noopener" style="display:flex;flex-wrap:wrap;gap:4px 24px;padding:18px 0;border-top:1px solid rgba(232,230,221,.1);color:#e8e6dd" style-hover="color:#9ec9b2">
+            <div style="flex:0 0 86px;font-size:13.5px;opacity:.42;font-variant-numeric:tabular-nums">{{ n.date }}</div>
+            <div style="flex:1 1 300px;min-width:0;font-size:16px;line-height:1.65;font-weight:300">{{ n.title }}</div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="contact" style="border-top:1px solid rgba(232,230,221,.1);background:#0e1a16;scroll-margin-top:70px">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(46px,7vw,90px) clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:clamp(30px,5vw,70px)">
+        <div style="flex:1 1 340px;min-width:0">
+          <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9ec9b2;margin-bottom:14px">{{ t.kContact }}</div>
+          <h2 style="font-family:'Noto Serif TC',serif;font-weight:500;font-size:clamp(24px,3.2vw,36px);margin:0 0 18px;line-height:1.4">{{ t.contactTitle }}</h2>
+          <p style="font-size:15.5px;line-height:2.05;font-weight:300;opacity:.72;margin:0;max-width:46ch;text-wrap:pretty">{{ t.recruit }}</p>
+        </div>
+        <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:18px">
+          <div>
+            <div style="font-size:12px;letter-spacing:.14em;opacity:.4;margin-bottom:7px">EMAIL</div>
+            <a href="mailto:hslee@ntnu.edu.tw" style="font-family:'Noto Serif TC',serif;font-size:clamp(18px,2.4vw,24px);word-break:break-all">hslee@ntnu.edu.tw</a>
+          </div>
+          <div>
+            <div style="font-size:12px;letter-spacing:.14em;opacity:.4;margin-bottom:7px">{{ t.office }}</div>
+            <div style="font-size:15px;line-height:1.85;font-weight:300;opacity:.72;white-space:pre-line">{{ t.officeAddr }}</div>
+          </div>
+        </div>
+      </div>
+      <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 40px;font-size:12.5px;opacity:.34;font-weight:300;line-height:1.8">{{ t.footer }}</div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9ec9b2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#9ec9b2&quot;,&quot;#c9b98a&quot;,&quot;#a8bcd6&quot;,&quot;#d6a8a8&quot;],&quot;section&quot;:&quot;外觀&quot;}}">
+const ZH = {
+  langBtn: "EN",
+  navResearch: "研究方向", navCareer: "學經歷", navPubs: "發表論文", navProjects: "產學合作", navTeaching: "開設課程", navAwards: "獲獎", navNews: "新聞", navContact: "聯絡",
+  name: "李鴻欣", nameSub: "Hung-Shin Lee, Ph.D.",
+  affil1: "助理教授", affil2: "AI 跨域應用研究所", affil3: "跨域科技產業創新研究學院", affil4: "國立臺灣師範大學",
+  ctaMail: "寫信給我",
+  heroTitle: "讓機器聽懂並說出臺灣人所使用的每一種話",
+  heroBody: "我的研究橫跨語音辨識、語音合成、語音翻譯、語音增強與品質評估、語者／語言辨識暨分段，以及以大型語言模型為核心的半雙工／全雙工對話式人工智慧。過去十多年，我在學術圈與產業界之間往返，投入台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。現在，我把這些經驗帶回校園。",
+  verseRef: "詩篇 19:1-4a",
+  kResearch: "Research", researchTitle: "五個彼此相連的研究主軸",
+  kCareer: "Experience", careerTitle: "學歷與經歷",
+  kPubs: "Publications", pubsTitle: "發表論文",
+  pubsNote: "共 7 篇期刊論文與 57 篇會議論文。以下為代表性著作，可依年份篩選。",
+  pubsFoot: "完整著作清單請見",
+  corrAuthor: "通訊作者",
+  kProjects: "Projects", projectsTitle: "研究計畫與產學合作", pitchLead: "如果貴公司手上有一個技術問題，答案不在現成的套件或 API 裡，很歡迎與我聊聊。",
+  pitchBody: "我做的事情，簡單說是把訊號變成可用的資訊——語音、文字或影像都在範圍內，離線批次處理或即時串流也都做過。十六年來我在學術圈與產業界之間往返，經手過辨識、合成、增強、偵測，以及以大型語言模型為核心的系統；這些工作的共同點是，它們最後都必須在真實的資料量、算力與延遲條件下穩定運作，而不只是在論文裡成立。也因為如此，我不會預設題目一定要落在我熟悉的領域：只要問題定義得夠清楚，值得用工程與研究一起面對，我都很願意投入。無論是產學合作、技術諮詢、委託研究、共同申請計畫，或只是想先確認一個想法可不可行，都歡迎來信，我們一起把問題看清楚。",
+  pitchCta: "聊聊合作的可能",
+  pitchItems: ["語音、語言與影像的 AI 系統開發", "即時串流與離線批次處理", "訊號增強、還原與品質評估", "大型語言模型的實際應用導入", "技術諮詢、委託研究與共同提案"],
+  kTeaching: "Teaching", teachingTitle: "開設課程與教學理念",
+  kAwards: "Honors", awardsTitle: "獲獎與榮譽",
+  kNews: "In the Press", newsTitle: "媒體報導",
+  kContact: "Contact", contactTitle: "歡迎與我聯絡",
+  recruit: "我長期招收對語音、對話與大型語言模型有興趣的碩、博士生與專題生。無論你想做的是本土語言的語音技術、語音品質評估，或是把模型真的變成一個能用的產品，都歡迎寫信告訴我你想解決什麼問題——不需要先準備好完整的研究計畫。",
+  office: "研究室", officeAddr: "國立臺灣師範大學\n跨域科技產業創新研究學院\nAI 跨域應用研究所",
+  footer: "© 2026 李鴻欣 Hung-Shin Lee · 國立臺灣師範大學 AI 跨域應用研究所"
+};
+const EN = {
+  langBtn: "中文",
+  navResearch: "Research", navCareer: "Experience", navPubs: "Publications", navProjects: "Industry Collaboration", navTeaching: "Teaching", navAwards: "Honors", navNews: "Press", navContact: "Contact",
+  name: "Hung-Shin Lee", nameSub: "李鴻欣, Ph.D.",
+  affil1: "Assistant Professor", affil2: "Graduate Institute of AI Interdisciplinary Applied Technology", affil3: "College of Interdisciplinary Industry-Academia Innovation", affil4: "National Taiwan Normal University",
+  ctaMail: "Email me",
+  heroTitle: "Teaching machines to hear — and speak — every language used in Taiwan",
+  heroBody: "My research spans speech recognition, speech synthesis, speech translation, speech enhancement and quality assessment, speaker/language recognition and diarization, and half-duplex / full-duplex conversational AI built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use. I now bring that experience back to the classroom.",
+  verseRef: "Psalm 19:1-4a",
+  kResearch: "Research", researchTitle: "Five interconnected research directions",
+  kCareer: "Experience", careerTitle: "Education & Experience",
+  kPubs: "Publications", pubsTitle: "Publications",
+  pubsNote: "7 journal articles and 57 conference papers. Selected works below, filterable by year.",
+  pubsFoot: "For the complete list, see",
+  corrAuthor: "Corresponding",
+  kProjects: "Projects", projectsTitle: "Projects & Industry Collaboration", pitchLead: "If your team is holding a technical problem whose answer isn't in an off-the-shelf library or API, I'd be glad to talk it through.",
+  pitchBody: "What I do, put simply, is turn signals into usable information — speech, text, or images; offline batch processing or real-time streaming. Sixteen years between academia and industry have taken me through recognition, synthesis, enhancement, detection, and systems built around large language models. What those projects share is that each of them ultimately had to run reliably under real limits on data, compute, and latency — not only in a paper. For that reason I don't assume a project has to sit inside my own research topics: if the problem is clearly defined and worth facing with both engineering and research, I'd be glad to take it on. Industry collaboration, technical consulting, contract research, joint proposals — or simply a first check on whether an idea is feasible — you're very welcome to write.",
+  pitchCta: "Let's talk about working together",
+  pitchItems: ["AI systems for speech, language, and vision", "Real-time streaming and offline batch pipelines", "Signal enhancement, restoration, and quality assessment", "Putting large language models into production", "Consulting, contract research, joint proposals"],
+  kTeaching: "Teaching", teachingTitle: "Courses & Teaching Philosophy",
+  kAwards: "Honors", awardsTitle: "Honors & Awards",
+  kNews: "In the Press", newsTitle: "Press Coverage",
+  kContact: "Contact", contactTitle: "Get in touch",
+  recruit: "I am always looking for master's and doctoral students, as well as undergraduate project students, interested in speech, dialogue, and large language models. Whether you want to work on speech technology for local languages, on speech quality assessment, or on turning a model into a product people can use — write and tell me what problem you want to solve. A polished research proposal is not required.",
+  office: "Office", officeAddr: "Graduate Institute of AI Interdisciplinary Applied Technology\nCollege of Interdisciplinary Industry-Academia Innovation\nNational Taiwan Normal University",
+  footer: "© 2026 Hung-Shin Lee 李鴻欣 · Graduate Institute of AI Interdisciplinary Applied Technology, NTNU"
+};
+
+const PILLARS = [
+  { zh: ["語音辨識 ASR", "低資源語言、通道穩健性與多語混合辨識；讓辨識系統在真實、吵雜、資料稀少的情境下仍然可靠。"], en: ["Speech Recognition", "Low-resource languages, channel robustness, and multilingual recognition — keeping ASR reliable in noisy, data-scarce, real-world conditions."] },
+  { zh: ["語音合成 TTS", "多腔調、多語者的語音生成，特別是客語與原住民族語等腔調高度分歧的語言。"], en: ["Speech Synthesis", "Multi-dialect, multi-speaker speech generation, especially for languages with highly divergent accents such as Hakka and Formosan languages."] },
+  { zh: ["台灣本土語言 AI", "台語、客語與 16 種原住民族語（42 種方言）的辨識、合成與翻譯系統。"], en: ["Taiwanese Language AI", "Recognition, synthesis, and translation for Taiwanese Hokkien, Hakka, and 16 Formosan indigenous languages (42 dialects)."] },
+  { zh: ["語音增強與品質評估", "即時降噪與串流語音增強，以及與人類聽感對齊的自動品質評分模型。"], en: ["Enhancement & Assessment", "Real-time denoising and streaming speech enhancement, plus automatic quality scoring aligned with human perception."] },
+  { zh: ["對話式 AI 與 LLM", "檢索增強生成、文化知識評測，以及語音人機互動介面的設計與評估。"], en: ["Conversational AI & LLMs", "Retrieval-augmented generation, cultural knowledge benchmarking, and the design and evaluation of spoken human-computer interfaces."] }
+];
+
+const CAREER = [
+  { years: "2022 – 2026", url: "https://ithuan.tw", link: ["意傳科技", "Ì-THUÂN KHO-KI"], tail: ["合作）、客語語音系統（與國立聯合大學張陳基教授合作），並推出 AuraCast、NovaCast 等串流語音與影像增強產品。", "), Hakka speech systems (with Prof. Chen-Chi Chang, NUU), and shipped AuraCast and NovaCast for streaming audio and video enhancement."], zh: ["AI 工程師（業界）", "聯和科創股份有限公司　·　諾思資訊股份有限公司", "主導族語 AI 計畫（與"], en: ["AI Engineer (Industry)", "United Link Co., Ltd. · North Co., Ltd.", "Led the Formosan-language AI programme (with "] },
+  { years: "2021 – 2022", zh: ["博士後研究員", "中央研究院　資訊科學研究所", "多語（華語、台語、英語）語音辨識、語者分段與辨識系統，應用於司法、醫療與媒體查核場域。"], en: ["Postdoctoral Researcher", "Institute of Information Science, Academia Sinica", "Multilingual (Mandarin, Taiwanese, English) ASR and speaker diarization deployed in judicial, medical, and fact-checking settings."] },
+  { years: "2009 – 2021", zh: ["研究助理", "中央研究院　資訊科學研究所", "十二年間投入強健語音辨識、語者與語言驗證、語音增強與分離、語音翻譯、偽造偵測等研究，並指導大學部與研究所學生。"], en: ["Research Assistant", "Institute of Information Science, Academia Sinica", "Twelve years across robust ASR, speaker/language verification, speech enhancement and separation, speech translation, and spoofing detection, while mentoring students."] },
+  { years: "2021", url: "https://homepage.iis.sinica.edu.tw/pages/whm/index_zh.html", link: ["王新民研究員", "Dr. Hsin-Min Wang"], tail: ["）。", ")."], zh: ["電機工程學博士", "國立臺灣大學", "論文：進階神經架構於語言、語者暨語音辨識（指導："], en: ["Ph.D. in Electrical Engineering", "National Taiwan University", "Dissertation: Advanced Neural Structures for Language, Speaker, and Speech Recognition (advisor: "] }
+];
+
+const PUBS = [
+  { year: 2026, venue: "IEEE SPL", corr: true, title: "DeRA-MOS: Optimizing text-to-music evaluation via decoupled listwise ranking and modality alignment", authors: "C.-C. Wang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2606.10010" },
+  { year: 2026, venue: "IEEE TASLP", corr: true, title: "Universal robust speech adaptation for cross-domain speech recognition and enhancement", authors: "C.-C. Wang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2602.04307" },
+  { year: 2026, venue: "JISE", corr: true, title: "Generalized stock price prediction for multiple stocks combined with news fusion", authors: "P.-J. Liao, H.-S. Lee, Y.-F. Cheng, L.-W. Chen, H.-y. Lee, H.-M. Wang", url: "https://arxiv.org/abs/2603.19286" },
+  { year: 2026, venue: "Interspeech", title: "Personalized keyword spotting for user-defined keywords leveraging text-independent speaker verification", authors: "M.-H. Hu, K.-T. Huang, C.-C. Wang, H.-S. Lee, B. Chen", url: "https://arxiv.org/abs/2606.20106" },
+  { year: 2026, venue: "IEEE ICME", title: "Robust generative audio quality assessment: Disentangling quality from spurious correlations", authors: "K.-T. Huang, C.-C. Wang, C.-Y. Yang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2603.16201" },
+  { year: 2026, venue: "LREC", title: "TG-ASR: Translation-guided learning with parallel gated cross attention for low-resource automatic speech recognition", authors: "C.-Y. Yang, C.-C. Wang, L.-W. Chen, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2602.22039" },
+  { year: 2026, venue: "LREC", title: "Efficient dialect-aware conditioning for low-resource Taiwanese Hakka speech processing", authors: "A.-C. Peng, K.-T. Huang, T.-H. Lo, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2602.22522" },
+  { year: 2026, venue: "IEEE ICASSP", title: "SCENE: Semantic-aware codec enhancement with neural embeddings", authors: "H.-Y. Lin, L.-W. Chen, H.-S. Lee", url: "https://arxiv.org/abs/2601.22189" },
+  { year: 2026, venue: "HICSS-59", title: "Analyzing information-seeking behaviors in a Hakka AI chatbot: A cognitive-pragmatic study", authors: "C.-H. Lee, C.-C. Chang, H.-S. Lee, Y.-H. Hsu, C.-Y. Chen", url: "https://arxiv.org/abs/2509.11591" },
+  { year: 2025, venue: "The Electronic Library", title: "Evaluating cultural knowledge processing in large language models: A cognitive benchmarking framework integrating retrieval-augmented generation", authors: "H.-S. Lee, C.-C. Chang, C.-Y. Chen, Y.-H. Hsu", url: "https://arxiv.org/abs/2511.01649" },
+  { year: 2025, venue: "IEEE ASRU", title: "QAMRO: Quality-aware adaptive margin ranking optimization for human-aligned assessment of audio generation systems", authors: "C.-C. Wang, K.-T. Huang, C.-Y. Yang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2508.08957" },
+  { year: 2025, venue: "IEEE ASRU", title: "Revealing the role of audio channels in ASR performance degradation", authors: "K.-T. Huang, L.-W. Chen, H.-S. Lee, B. Chen, H.-M. Wang", url: "https://arxiv.org/abs/2508.08967" },
+  { year: 2025, venue: "APSIPA ASC", title: "DRASP: A dual-resolution attentive statistics pooling framework for automatic MOS prediction", authors: "C.-Y. Yang, K.-T. Huang, C.-C. Wang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2508.21407" },
+  { year: 2025, venue: "O-COCOSDA", title: "Exploring the impact of data quantity on ASR in extremely low-resource languages", authors: "Y.-F. Cheng, L.-W. Chen, H.-S. Lee, H.-M. Wang", url: "https://arxiv.org/abs/2409.08872" },
+  { year: 2025, venue: "IntelliSys", title: "Enhancing low-resource minority language translation with LLMs and retrieval-augmented generation for cultural nuances", authors: "C.-C. Chang, C.-F. Li, C.-H. Lee, H.-S. Lee", url: "https://arxiv.org/abs/2505.10829" },
+  { year: 2025, venue: "IEEE ICASSP", title: "Channel-aware domain-adaptive generative adversarial network for robust speech recognition", authors: "C.-C. Wang, L.-W. Chen, C.-K. Chou, H.-S. Lee, B. Chen, H.-M. Wang", url: "https://arxiv.org/abs/2409.12386" },
+  { year: 2024, venue: "IEEE RASSE", title: "Leveraging retrieval-augmented generation for culturally inclusive Hakka chatbots: Design insights and user perceptions", authors: "C.-C. Chang, H.-P. Chang, H.-S. Lee", url: "https://arxiv.org/abs/2410.15572" },
+  { year: 2024, venue: "O-COCOSDA", title: "VoxHakka: A dialectally diverse multi-speaker text-to-speech system for Taiwanese Hakka", authors: "L.-W. Chen, H.-S. Lee, C.-C. Chang", url: "https://arxiv.org/abs/2409.01548" },
+  { year: 2023, venue: "IEEE SPL", title: "Multi-target filter and detector for unknown-number speaker diarization", authors: "C.-Y. Cheng, H.-S. Lee, Y. Tsao, H.-M. Wang", url: "https://arxiv.org/abs/2203.16007" },
+  { year: 2020, venue: "IEEE/ACM TASLP", title: "Subspace-based representation and learning for phonotactic spoken language recognition", authors: "H.-S. Lee, Y. Tsao, S.-K. Jeng, H.-M. Wang", url: "https://arxiv.org/abs/2203.15576" },
+  { year: 2017, venue: "IJCLCLP", title: "A replay spoofing detection system based on discriminative autoencoders", authors: "C.-L. Wu, H.-P. Hsu, Y.-D. Lu, Y. Tsao, H.-S. Lee, H.-M. Wang", url: "https://www.aclweb.org/anthology/O17-5004/" }
+];
+
+const PROJECTS = [
+  { zh: ["原住民族語 AI 計畫", "為 16 種原住民族語、42 種方言建立語音辨識、語音合成與機器翻譯系統，主導技術規劃與實作。", "原住民族語言研究發展基金會"], en: ["Formosan Language AI Programme", "Speech recognition, synthesis, and machine translation for 16 Formosan indigenous languages across 42 dialects; led the technical implementation.", "ILRDF"] },
+  { zh: ["客語 AI 系統與 Hani 哈妮", "與國立聯合大學張陳基教授合作，建立客語 ASR、TTS、機器翻譯與檢索增強的客語聊天機器人。", "國立聯合大學"], en: ["Hakka AI Systems & “Hani”", "With Prof. Chen-Chi Chang (NUU): Hakka ASR, TTS, machine translation, and a retrieval-augmented Hakka chatbot.", "National United University"] },
+  { zh: ["華語／台語語音辨識與語者分段", "為電話語音監聽場景整合語音辨識與語者辨識、分段系統。", "法務部調查局"], en: ["Mandarin/Taiwanese ASR & Diarization", "An integrated ASR and speaker diarization/verification system for telephone speech monitoring.", "Ministry of Justice Investigation Bureau"] },
+  { zh: ["醫療與高齡研究語音系統", "為醫療指令辨識開發多語（華語、英語、日語）辨識、語者辨識與喚醒詞偵測；並支援高齡醫學研究的語音轉寫。", "康統醫學科技　·　臺北榮民總醫院"], en: ["Speech Systems for Medicine & Ageing Research", "Multilingual (Mandarin, English, Japanese) recognition, speaker ID, and wake-word detection for medical commands; ASR for geriatric research.", "KenKone Medical · Taipei Veterans General Hospital"] },
+  { zh: ["事實查核與調查研究語音轉寫", "建立華語／台語影音轉寫系統，支援事實查核與大規模社會調查研究的資料處理。", "資策會　·　臺灣事實查核中心　·　中研院人社中心"], en: ["ASR for Fact-Checking & Survey Research", "Mandarin/Taiwanese transcription of online video supporting fact-checking and large-scale social survey research.", "III · Taiwan FactCheck Center · Academia Sinica"] },
+  { zh: ["AuraCast 與 NovaCast", "即時降噪與影像品質增強產品，部署於 OBS 串流環境，於有限位元率下改善直播音訊與畫質。", "聯和科創"], en: ["AuraCast & NovaCast", "Real-time noise cancellation and video quality enhancement deployed on OBS, improving live streams under limited bitrate.", "United Link"] }
+];
+
+const COURSES = [
+  { zh: "語音處理與人機互動", en: "Speech Processing and Intelligent Human-Computer Interaction" },
+  { zh: "自然語言處理與大型語言模型", en: "Natural Language Processing and Large Language Models" }
+];
+
+const AWARDS = [
+  { year: 2025, zh: ["最佳論文獎（技術類）", "第 28 屆 Oriental COCOSDA 國際會議　·　印尼日惹"], en: ["Best Paper Award, Technology Category", "28th International Conference on Oriental COCOSDA · Yogyakarta, Indonesia"] },
+  { year: 2022, zh: ["一般組第一名", "臺灣客語語音辨識競賽 FSR 2022　·　臺北"], en: ["1st Place, General Group", "Formosa Taiwanese Hakka Speech Recognition Challenge 2022 · Taipei"] },
+  { year: 2020, zh: ["產業組第一名", "臺灣台語語音辨識競賽 FSR 2020　·　臺北"], en: ["1st Place, Industrial Group", "Formosa Taiwanese Hokkien Speech Recognition Challenge 2020 · Taipei"] },
+  { year: 2018, zh: ["產業組第二名", "國語語音辨識競賽 FSR 2018　·　臺北"], en: ["2nd Place, Industrial Group", "Formosa Taiwanese Mandarin Speech Recognition Challenge 2018 · Taipei"] },
+  { year: 2014, zh: ["口語處理學生旅費獎助", "第 39 屆 IEEE ICASSP　·　義大利佛羅倫斯"], en: ["Spoken Language Processing Student Travel Grant", "39th IEEE ICASSP · Florence, Italy"] },
+  { year: 2008, zh: ["最佳學生論文獎", "第 6 屆中文口語語言處理國際研討會 ISCSLP　·　中國昆明"], en: ["Best Student Paper Award", "6th International Symposium on Chinese Spoken Language Processing · Kunming, China"] }
+];
+
+const NEWS = [
+  { date: "2025 / 08", zh: "經濟日報：智通「小金雞」聯和科創邁大步！攻克 AI 語音技術 2 挑戰", en: "Economic Daily News: United Link tackles two key challenges in AI speech technology", url: "https://udn.com/news/story/7240/8962411" },
+  { date: "2025 / 02", zh: "客新聞：客家版的 ChatGPT 上線，聯合大學推「Hani 哈妮」主權 AI 聊天機器人", en: "Hakka News: A Hakka ChatGPT goes live — NUU launches the “Hani” sovereign AI chatbot", url: "https://hakkanews.tw/2025/02/24/hakka-version-of-chatgpt-is-online/" },
+  { date: "2025 / 02", zh: "工商時報：聯和科創「Audio Pro」即時語音增強系統，鎖定串流產業需求", en: "Commercial Times: United Link’s “Audio Pro” real-time speech enhancement targets the streaming industry", url: "https://www.ctee.com.tw/news/20250219701857-430502" },
+  { date: "2025 / 02", zh: "經濟日報：智通科創「小金雞」語音辨識升級！推 AudioPro 增強系統", en: "Economic Daily News: Speech recognition upgraded — AudioPro enhancement system launched", url: "https://www.sinotrade.com.tw/richclub/news/67b5887e31c1ba247a73ee57" },
+  { date: "2024 / 10", zh: "經濟日報：聯和科創首款「客語」文字轉語音系統 VoxHakka 問市", en: "Economic Daily News: VoxHakka, the first Hakka text-to-speech system, hits the market", url: "https://www.sinotrade.com.tw/richclub/news/670e2f1332ba0c9331e17cd6" },
+  { date: "2024 / 09", zh: "經濟日報：聯和科創打造「跨域語音增強」技術，大展 AI 創新實力", en: "Economic Daily News: United Link builds cross-domain speech enhancement technology", url: "https://www.sinotrade.com.tw/richclub/news/66e29f8332ba0c933165c586" }
+];
+
+class Component extends DCLogic {
+  state = { lang: "zh", filter: "recent" };
+
+  componentDidMount() {
+    try {
+      const s = localStorage.getItem("hsl-site-lang");
+      if (s === "zh" || s === "en") this.setState({ lang: s });
+    } catch (e) {}
+  }
+
+  setLang(lang) {
+    this.setState({ lang });
+    try { localStorage.setItem("hsl-site-lang", lang); } catch (e) {}
+  }
+
+  renderVals() {
+    const zh = this.state.lang === "zh";
+    const t = zh ? ZH : EN;
+    const accent = this.props.accent ?? "#9ec9b2";
+    const filter = this.state.filter;
+
+    const pubs = PUBS.filter(p => filter === "all" ? true : filter === "recent" ? p.year >= 2024 : p.year === Number(filter));
+
+    const labels = zh
+      ? { recent: "近三年", all: "全部" }
+      : { recent: "Last 3 years", all: "All" };
+    const years = Array.from(new Set(PUBS.map(p => p.year))).sort((a, b) => b - a);
+    const mk = (key, label) => {
+      const on = String(filter) === String(key);
+      return {
+        label, onClick: () => this.setState({ filter: key }),
+        bg: on ? accent : "transparent",
+        color: on ? "#12211c" : "rgba(232,230,221,.72)",
+        border: on ? accent : "rgba(232,230,221,.24)"
+      };
+    };
+    const yearFilters = [mk("recent", labels.recent), ...years.map(y => mk(y, String(y))), mk("all", labels.all)];
+
+    const pick = (o, i) => (zh ? o.zh : o.en)[i];
+
+    return {
+      t,
+      isZh: zh,
+      isEn: !zh,
+      toggleLang: () => this.setLang(zh ? "en" : "zh"),
+      pillars: PILLARS.map((p, i) => ({ num: String(i + 1).padStart(2, "0"), title: pick(p, 0), body: pick(p, 1) })),
+      career: CAREER.map(c => ({ years: c.years, role: pick(c, 0), org: pick(c, 1), note: pick(c, 2), linkText: c.link ? (zh ? c.link[0] : c.link[1]) : "", linkUrl: c.url || "#", noteTail: c.tail ? (zh ? c.tail[0] : c.tail[1]) : "" })),
+      pitchItems: t.pitchItems.map((x, i) => ({ num: String(i + 1).padStart(2, "0"), text: x })),
+      yearFilters,
+      pubs: pubs.map(p => {
+        const i = p.authors.indexOf("H.-S. Lee");
+        return { ...p, pre: i < 0 ? p.authors : p.authors.slice(0, i), post: i < 0 ? "" : p.authors.slice(i + 9) };
+      }),
+      courses: COURSES.map(c => (zh ? { term: "115-1", zh: c.zh, en: c.en } : { term: "115-1", zh: c.en, en: c.zh })),
+      awards: AWARDS.map(a => ({ year: a.year, title: pick(a, 0), event: pick(a, 1) })),
+      news: NEWS.map(n => ({ date: n.date, title: zh ? n.zh : n.en, url: n.url }))
+    };
+  }
+}
+</script>
+</body>
+</html>
