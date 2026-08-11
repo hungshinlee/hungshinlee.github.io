@@ -63,7 +63,7 @@
         </div>
       </div>
       <div style="flex:999 1 420px;min-width:0">
-        <h1 style="font-family:'Noto Serif TC',serif;font-weight:600;font-size:clamp(30px,5.2vw,58px);line-height:1.3;margin:0 0 26px;max-width:19ch;text-wrap:pretty">{{ t.heroTitle }}</h1>
+        <h1 style="font-family:'Noto Serif TC',serif;font-weight:600;font-size:clamp(30px,5.2vw,58px);line-height:1.3;margin:0 0 26px;max-width:19ch;text-wrap:pretty">{{ t.heroTitleA }}<strong style="font-weight:700;color:#c9e3d4">{{ t.heroTitleKey }}</strong>{{ t.heroTitleB }}</h1>
         <p style="font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;max-width:54ch;margin:0;font-weight:300;opacity:.76;text-wrap:pretty">{{ t.heroBody }}</p>
         <blockquote style="margin:clamp(32px,4vw,48px) 0 0;padding:24px clamp(20px,3vw,30px);border-left:2px solid rgba(158,201,178,.55);background:rgba(232,230,221,.045);border-radius:0 4px 4px 0">
           <sc-if value="{{ isZh }}" hint-placeholder-val="{{ true }}">
@@ -148,7 +148,7 @@
               <div style="flex:1 1 300px;min-width:0">
                 <div style="font-family:'Noto Serif TC',serif;font-size:18.5px;line-height:1.5">{{ c.role }}</div>
                 <div style="font-size:14px;opacity:.6;margin-top:5px;font-weight:300;line-height:1.75">{{ c.org }}</div>
-                <div style="font-size:13.5px;opacity:.5;margin-top:9px;font-weight:300;line-height:1.85;max-width:62ch;text-wrap:pretty">{{ c.note }}<sc-if value="{{ c.linkText }}" hint-placeholder-val="{{ true }}"><a href="{{ c.linkUrl }}" target="_blank" rel="noopener">{{ c.linkText }}</a>{{ c.noteTail }}</sc-if></div>
+                <div style="font-size:13.5px;opacity:.5;margin-top:9px;font-weight:300;line-height:1.85;max-width:62ch;text-wrap:pretty">{{ c.note }}<sc-if value="{{ c.linkText }}" hint-placeholder-val="{{ true }}"><a href="{{ c.linkUrl }}" target="_blank" rel="noopener">{{ c.linkText }}</a>{{ c.noteTail }}</sc-if><sc-if value="{{ c.linkText2 }}" hint-placeholder-val="{{ true }}"><a href="{{ c.linkUrl2 }}" target="_blank" rel="noopener">{{ c.linkText2 }}</a>{{ c.noteTail2 }}</sc-if></div>
               </div>
             </div>
           </sc-for>
@@ -249,7 +249,7 @@ const ZH = {
   name: "李鴻欣", nameSub: "Hung-Shin Lee, Ph.D.",
   affil1: "助理教授", affil2: "AI 跨域應用研究所", affil3: "跨域科技產業創新研究學院", affil4: "國立臺灣師範大學",
   ctaMail: "寫信給我",
-  heroTitle: "讓機器聽懂並說出臺灣人所使用的每一種話",
+  heroTitleA: "讓機器聽懂並說出", heroTitleKey: "臺灣人", heroTitleB: "所使用的每一種語言",
   heroBody: "我的研究橫跨語音辨識、語音合成、語音翻譯、語音增強與品質評估、語者／語言辨識暨分段，以及以大型語言模型為核心的半雙工／全雙工對話式人工智慧。過去十多年往返於學術圈與產業界，投入台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。",
   verseRef: "聖經・詩篇 19:1-4a",
   kResearch: "Research", researchTitle: "五個彼此相連的研究主軸",
@@ -277,7 +277,7 @@ const EN = {
   name: "Hung-Shin Lee", nameSub: "李鴻欣, Ph.D.",
   affil1: "Assistant Professor", affil2: "Graduate Institute of AI Interdisciplinary Applied Technology", affil3: "College of Interdisciplinary Industry-Academia Innovation", affil4: "National Taiwan Normal University",
   ctaMail: "Email me",
-  heroTitle: "Teaching machines to hear — and speak — every language used in Taiwan",
+  heroTitleA: "Teaching machines to hear — and speak — every language used in ", heroTitleKey: "Taiwan", heroTitleB: "",
   heroBody: "My research spans speech recognition, speech synthesis, speech translation, speech enhancement and quality assessment, speaker/language recognition and diarization, and half-duplex / full-duplex conversational AI built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use.",
   verseRef: "The Bible・Psalm 19:1-4a",
   kResearch: "Research", researchTitle: "Five interconnected research directions",
@@ -309,7 +309,7 @@ const PILLARS = [
 ];
 
 const CAREER = [
-  { years: "2022 – 2026", url: "https://ithuan.tw", link: ["意傳科技", "Ì-THUÂN KHO-KI"], tail: ["合作）、客語語音系統（與國立聯合大學張陳基教授合作），並推出 AuraCast、NovaCast 等串流語音與影像增強產品。", "), Hakka speech systems (with Prof. Chen-Chi Chang, NUU), and shipped AuraCast and NovaCast for streaming audio and video enhancement."], zh: ["AI 工程師（業界）", "聯和科創股份有限公司　·　諾思資訊股份有限公司", "主導族語 AI 計畫（與"], en: ["AI Engineer (Industry)", "United Link Co., Ltd. · North Co., Ltd.", "Led the Formosan-language AI programme (with "] },
+  { years: "2022 – 2026", url: "https://ithuan.tw", link: ["意傳科技", "Ì-THUÂN KHO-KI"], tail: ["合作）、客語語音系統（與", "), Hakka speech systems (with "], url2: "https://ccdm.nuu.edu.tw/p/426-1063-15.php", link2: ["國立聯合大學張陳基教授", "Prof. Chen-Chi Chang, NUU"], tail2: ["合作），並推出 AuraCast、NovaCast 等串流語音與影像增強產品。", "), and shipped AuraCast and NovaCast for streaming audio and video enhancement."], zh: ["AI 工程師（業界）", "聯和科創股份有限公司　·　諾思資訊股份有限公司", "主導族語 AI 計畫（與"], en: ["AI Engineer (Industry)", "United Link Co., Ltd. · North Co., Ltd.", "Led the Formosan-language AI programme (with "] },
   { years: "2021 – 2022", zh: ["博士後研究員", "中央研究院　資訊科學研究所", "多語（華語、台語、英語）語音辨識、語者分段與辨識系統，應用於司法、醫療與媒體查核場域。"], en: ["Postdoctoral Researcher", "Institute of Information Science, Academia Sinica", "Multilingual (Mandarin, Taiwanese, English) ASR and speaker diarization deployed in judicial, medical, and fact-checking settings."] },
   { years: "2009 – 2021", zh: ["研究助理", "中央研究院　資訊科學研究所", "十二年間投入強健語音辨識、語者與語言驗證、語音增強與分離、語音翻譯、偽造偵測等研究，並指導大學部與研究所學生。"], en: ["Research Assistant", "Institute of Information Science, Academia Sinica", "Twelve years across robust ASR, speaker/language verification, speech enhancement and separation, speech translation, and spoofing detection, while mentoring students."] }
 ];
@@ -418,7 +418,7 @@ class Component extends DCLogic {
       isEn: !zh,
       toggleLang: () => this.setLang(zh ? "en" : "zh"),
       pillars: PILLARS.map((p, i) => ({ num: String(i + 1).padStart(2, "0"), title: pick(p, 0), body: pick(p, 1) })),
-      career: CAREER.map(c => ({ years: c.years, role: pick(c, 0), org: pick(c, 1), note: pick(c, 2), linkText: c.link ? (zh ? c.link[0] : c.link[1]) : "", linkUrl: c.url || "#", noteTail: c.tail ? (zh ? c.tail[0] : c.tail[1]) : "" })),
+      career: CAREER.map(c => ({ years: c.years, role: pick(c, 0), org: pick(c, 1), note: pick(c, 2), linkText: c.link ? (zh ? c.link[0] : c.link[1]) : "", linkUrl: c.url || "#", noteTail: c.tail ? (zh ? c.tail[0] : c.tail[1]) : "", linkText2: c.link2 ? (zh ? c.link2[0] : c.link2[1]) : "", linkUrl2: c.url2 || "#", noteTail2: c.tail2 ? (zh ? c.tail2[0] : c.tail2[1]) : "" })),
       pitchItems: t.pitchItems.map((x, i) => ({ num: String(i + 1).padStart(2, "0"), text: x })),
       yearFilters,
       pubs: pubs.map(p => {
