@@ -111,6 +111,16 @@
           <div style="font-size:14px;opacity:.55;margin-top:6px;letter-spacing:.03em">{{ t.nameSub }}</div>
           <div style="margin-top:18px;font-size:13.5px;line-height:1.95;opacity:.66;font-weight:300">{{ t.affil1 }}<br />{{ t.affil2 }}<br />{{ t.affil3 }}<br />{{ t.affil4 }}</div>
           <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(232,230,221,.12)">
+            <div style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#9ec9b2;margin-bottom:10px">{{ t.highlightsLabel }}</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ highlights }}" as="h" hint-placeholder-count="1">
+                <div style="font-size:13px;line-height:1.85;opacity:.66;font-weight:300;text-wrap:pretty">
+                  <span style="color:#9ec9b2;opacity:.85;font-variant-numeric:tabular-nums">[{{ h.date }}]</span> {{ h.text }}
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(232,230,221,.12)">
             <div style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#9ec9b2;margin-bottom:8px">{{ t.eduLabel }}</div>
             <div style="font-size:13.5px;line-height:1.9;opacity:.66;font-weight:300">{{ t.eduDegree }}<br />{{ t.eduSchool }}</div>
           </div>
@@ -316,6 +326,7 @@ const ZH = {
   verseRef: "聖經・詩篇 19:1-4a",
   kResearch: "Research", researchTitle: "五個彼此相連的研究主軸",
   kCareer: "Experience", careerTitle: "經歷",
+  highlightsLabel: "最新消息",
   eduLabel: "學歷", eduDegree: "電機工程學博士", eduSchool: "國立臺灣大學",
   kPubs: "Publications", pubsTitle: "發表論文",
   pubsNote: "共 7 篇期刊論文與 57 篇會議論文。以下為代表性著作，可依年份篩選。",
@@ -345,6 +356,7 @@ const EN = {
   verseRef: "The Bible・Psalm 19:1-4a",
   kResearch: "Research", researchTitle: "Five interconnected research directions",
   kCareer: "Experience", careerTitle: "Experience",
+  highlightsLabel: "Latest News",
   eduLabel: "Education", eduDegree: "Ph.D. in Electrical Engineering", eduSchool: "National Taiwan University",
   kPubs: "Publications", pubsTitle: "Publications",
   pubsNote: "7 journal articles and 57 conference papers. Selected works below, filterable by year.",
@@ -424,6 +436,11 @@ const AWARDS = [
   { year: 2008, zh: ["最佳學生論文獎", "第 6 屆中文口語語言處理國際研討會 ISCSLP　·　中國昆明"], en: ["Best Student Paper Award", "6th International Symposium on Chinese Spoken Language Processing · Kunming, China"] }
 ];
 
+const HIGHLIGHTS = [
+  { date: "2026/08/21",
+    zh: "我們的論文 “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” 已被 EMNLP 2026 (Main Conference) 接受！",
+    en: "Our paper “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” has been accepted to EMNLP 2026 (Main Conference)!" },
+];
 const NEWS = [
   { date: "2026 / 07", zh: "客新聞：一秒生成客語童話與雙人 Podcast！「客家 GPT」超神功能曝光", en: "Hakka News: Hakka fairy tales and two-host podcasts in one second — HakkaGPT’s standout features revealed", url: "https://hakkanews.tw/2026/07/29/294068/" },
   { date: "2026 / 07", zh: "客委會：HakkaGPT 結合 AI，拓展客語生活應用", en: "Hakka Affairs Council: HakkaGPT brings AI to everyday Hakka-language use", url: "https://www.hakka.gov.tw/chhakka/app/data/view?module=hotnews&id=25&serno=94946ee5-bb48-42e6-b790-13d5ffbc9dab" },
@@ -490,6 +507,7 @@ class Component extends DCLogic {
       }),
       courses: COURSES.map(c => (zh ? { term: "115-1", zh: c.zh, en: c.en } : { term: "115-1", zh: c.en, en: c.zh })),
       awards: AWARDS.map(a => ({ year: a.year, title: pick(a, 0), event: pick(a, 1) })),
+      highlights: HIGHLIGHTS.map(h => ({ date: h.date, text: zh ? h.zh : h.en })),
       news: NEWS.map(n => ({ date: n.date, title: zh ? n.zh : n.en, url: n.url }))
     };
   }
