@@ -114,8 +114,8 @@
             <div style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#9ec9b2;margin-bottom:10px">{{ t.highlightsLabel }}</div>
             <div style="display:flex;flex-direction:column;gap:10px">
               <sc-for list="{{ highlights }}" as="h" hint-placeholder-count="1">
-                <div style="font-size:13px;line-height:1.85;opacity:.66;font-weight:300;text-wrap:pretty">
-                  <span style="color:#9ec9b2;opacity:.85;font-variant-numeric:tabular-nums">[{{ h.date }}]</span> {{ h.text }}
+                <div style="font-size:13px;line-height:1.85;color:rgba(232,230,221,.66);font-weight:300;text-wrap:pretty">
+                  <span style="color:#9ec9b2;opacity:.85;font-variant-numeric:tabular-nums">[{{ h.date }}]</span> {{ h.pre }}<strong style="font-weight:700;color:#c9e3d4">{{ h.venue }}</strong>{{ h.post }}
                 </div>
               </sc-for>
             </div>
@@ -393,6 +393,7 @@ const PUBS = [
   { year: 2026, venue: "IEEE SPL", corr: true, title: "DeRA-MOS: Optimizing text-to-music evaluation via decoupled listwise ranking and modality alignment", authors: "C.-C. Wang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2606.10010" },
   { year: 2026, venue: "IEEE TASLP", corr: true, title: "Universal robust speech adaptation for cross-domain speech recognition and enhancement", authors: "C.-C. Wang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2602.04307" },
   { year: 2026, venue: "JISE", corr: true, title: "Generalized stock price prediction for multiple stocks combined with news fusion", authors: "P.-J. Liao, H.-S. Lee, Y.-F. Cheng, L.-W. Chen, H.-y. Lee, H.-M. Wang", url: "https://arxiv.org/abs/2603.19286" },
+  { year: 2026, venue: "EMNLP", title: "Anchoring speech with semantics: A multimodal adapter mechanism for automatic speech recognition in low-resource languages", authors: "K.-T. Huang, C.-Y. Yang, C.-C. Wang, H.-S. Lee, H.-M. Wang, B. Chen" },
   { year: 2026, venue: "Interspeech", title: "Personalized keyword spotting for user-defined keywords leveraging text-independent speaker verification", authors: "M.-H. Hu, K.-T. Huang, C.-C. Wang, H.-S. Lee, B. Chen", url: "https://arxiv.org/abs/2606.20106" },
   { year: 2026, venue: "IEEE ICME", title: "Robust generative audio quality assessment: Disentangling quality from spurious correlations", authors: "K.-T. Huang, C.-C. Wang, C.-Y. Yang, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2603.16201" },
   { year: 2026, venue: "LREC", title: "TG-ASR: Translation-guided learning with parallel gated cross attention for low-resource automatic speech recognition", authors: "C.-Y. Yang, C.-C. Wang, L.-W. Chen, H.-S. Lee, H.-M. Wang, B. Chen", url: "https://arxiv.org/abs/2602.22039" },
@@ -438,8 +439,8 @@ const AWARDS = [
 
 const HIGHLIGHTS = [
   { date: "2026/08/21",
-    zh: "我們的論文 “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” 已被 EMNLP 2026 (Main Conference) 接受！",
-    en: "Our paper “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” has been accepted to EMNLP 2026 (Main Conference)!" },
+    zh: { pre: "我們的論文 “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” 已被 ", venue: "EMNLP 2026 (Main Conference)", post: " 接受！" },
+    en: { pre: "Our paper “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” has been accepted to ", venue: "EMNLP 2026 (Main Conference)", post: "!" } },
 ];
 const NEWS = [
   { date: "2026 / 07", zh: "客新聞：一秒生成客語童話與雙人 Podcast！「客家 GPT」超神功能曝光", en: "Hakka News: Hakka fairy tales and two-host podcasts in one second — HakkaGPT’s standout features revealed", url: "https://hakkanews.tw/2026/07/29/294068/" },
@@ -507,7 +508,7 @@ class Component extends DCLogic {
       }),
       courses: COURSES.map(c => (zh ? { term: "115-1", zh: c.zh, en: c.en } : { term: "115-1", zh: c.en, en: c.zh })),
       awards: AWARDS.map(a => ({ year: a.year, title: pick(a, 0), event: pick(a, 1) })),
-      highlights: HIGHLIGHTS.map(h => ({ date: h.date, text: zh ? h.zh : h.en })),
+      highlights: HIGHLIGHTS.map(h => ({ date: h.date, ...(zh ? h.zh : h.en) })),
       news: NEWS.map(n => ({ date: n.date, title: zh ? n.zh : n.en, url: n.url }))
     };
   }
