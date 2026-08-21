@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hung-Shin Lee | CIAI, NTNU</title>
+<meta name="description" content="李鴻欣 (Hung-Shin Lee)，國立臺灣師範大學跨域科技產業創新研究學院 AI 跨域應用研究所助理教授。研究領域涵蓋語音辨識、語音合成、語音翻譯、語者辨識與對話式 AI，專注台語、客語與原住民族語等低資源語言的語音技術。" />
+<meta name="author" content="Hung-Shin Lee 李鴻欣" />
+<link rel="canonical" href="https://web.ntnu.edu.tw/~hslee/" />
+
+<!-- Open Graph：LINE / Facebook / Slack / Discord 等連結預覽 -->
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Hung-Shin Lee 李鴻欣" />
+<meta property="og:url" content="https://web.ntnu.edu.tw/~hslee/" />
+<meta property="og:title" content="Hung-Shin Lee (李鴻欣) | CIAI, NTNU (臺師大產創學院)" />
+<meta property="og:description" content="語音辨識、語音合成、語音翻譯與對話式 AI 研究，專注台語、客語與原住民族語等低資源語言的語音技術。" />
+<meta property="og:image" content="https://web.ntnu.edu.tw/~hslee/photo.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="640" />
+<meta property="og:image:alt" content="Hung-Shin Lee 李鴻欣" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="profile:first_name" content="Hung-Shin" />
+<meta property="profile:last_name" content="Lee" />
+
+<!-- X / Twitter：正方形頭像用 summary，不用 summary_large_image 以免裁切 -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Hung-Shin Lee (李鴻欣) | CIAI, NTNU (臺師大產創學院)" />
+<meta name="twitter:description" content="語音辨識、語音合成、語音翻譯與對話式 AI 研究，專注台語、客語與原住民族語等低資源語言的語音技術。" />
+<meta name="twitter:image" content="https://web.ntnu.edu.tw/~hslee/photo.jpg" />
+<meta name="twitter:image:alt" content="Hung-Shin Lee 李鴻欣" />
+
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>李鴻欣 Hung-Shin Lee｜國立臺灣師範大學 AI 跨域應用研究所</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -20,6 +47,39 @@
   a:hover { color:#ffffff; }
   ::selection { background:#2f5f4d; color:#fff; }
   nav::-webkit-scrollbar { display:none; }
+
+  /* 窄螢幕導覽列右緣淡出，提示右方還有可橫向捲動的項目；
+     桌機時項目排不滿、淡出落在空白處，視覺上無感。 */
+  header nav {
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent 100%);
+            mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent 100%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  /* 列印／存成 PDF：轉為淺底深字，隱藏固定頁首，並展開外部連結網址 */
+  @media print {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      background: transparent !important;
+      color: #111 !important;
+      border-color: #bbb !important;
+      box-shadow: none !important;
+      -webkit-backdrop-filter: none !important;
+              backdrop-filter: none !important;
+      -webkit-mask-image: none !important;
+              mask-image: none !important;
+    }
+    body { background: #fff !important; }
+    header { display: none !important; }
+    main { padding-top: 0 !important; }
+    a[href^="http"]::after {
+      content: " (" attr(href) ")";
+      font-size: 10px; color: #555 !important; word-break: break-all;
+    }
+  }
 </style>
 </helmet>
 <div style="background:#12211c;min-height:100vh">
@@ -65,6 +125,7 @@
       <div style="flex:999 1 420px;min-width:0">
         <h1 style="font-family:'Noto Serif TC',serif;font-weight:600;font-size:clamp(30px,5.2vw,58px);line-height:1.3;margin:0 0 26px;max-width:19ch;text-wrap:pretty">{{ t.heroTitleA }}<strong style="font-weight:700;color:#c9e3d4">{{ t.heroTitleKey }}</strong>{{ t.heroTitleB }}</h1>
         <p style="font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;max-width:54ch;margin:0;font-weight:300;opacity:.76;text-wrap:pretty">{{ t.heroBody }}</p>
+        <p style="font-size:clamp(15.5px,1.6vw,17.5px);line-height:2.05;max-width:54ch;margin:1.15em 0 0;font-weight:300;opacity:.76;text-wrap:pretty">{{ t.heroBody2 }}</p>
         <blockquote style="margin:clamp(32px,4vw,48px) 0 0;padding:24px clamp(20px,3vw,30px);border-left:2px solid rgba(158,201,178,.55);background:rgba(232,230,221,.045);border-radius:0 4px 4px 0">
           <sc-if value="{{ isZh }}" hint-placeholder-val="{{ true }}">
             <p style="font-family:'Noto Serif TC',serif;font-size:clamp(15px,1.6vw,19px);line-height:2;margin:0;opacity:.88;text-wrap:pretty;font-weight:400">諸天<strong style="font-weight:700;color:#c9e3d4">述說</strong>上帝的榮耀，穹蒼<strong style="font-weight:700;color:#c9e3d4">傳揚</strong>祂手的作為。<br />這日到那日發出<strong style="font-weight:700;color:#c9e3d4">言語</strong>，這夜到那夜傳出知識。<br /><strong style="font-weight:700;color:#c9e3d4">無言無語</strong>，也無<strong style="font-weight:700;color:#c9e3d4">聲音</strong>可<strong style="font-weight:700;color:#c9e3d4">聽</strong>。<br />它們的<strong style="font-weight:700;color:#c9e3d4">聲浪</strong>傳遍天下，它們的<strong style="font-weight:700;color:#c9e3d4">言語</strong>傳到地極。</p>
@@ -250,7 +311,8 @@ const ZH = {
   affil1: "助理教授", affil2: "AI 跨域應用研究所", affil3: "跨域科技產業創新研究學院", affil4: "國立臺灣師範大學",
   ctaMail: "寫信給我",
   heroTitleA: "讓機器聽懂並說出", heroTitleKey: "臺灣人", heroTitleB: "所使用的每一種語言",
-  heroBody: "我的研究橫跨語音辨識、語音合成、語音翻譯、語音增強與品質評估、語者／語言辨識暨分段，以及以大型語言模型為核心的半雙工／全雙工對話式人工智慧。過去十多年往返於學術圈與產業界，投入台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。",
+  heroBody: "我的興趣橫跨語音辨識（ASR）、語音合成（TTS）、語音／機器翻譯（ST/MT）、語音增強、語音分離、語者／語言辨識暨分段、語音品質評估，以及以大型語言模型為核心的半雙工／全雙工對話式即時語音系統。過去十多年往返於學術圈與產業界，不僅是國語，亦投入研發台語、客語與原住民族語等低資源語言的語音技術，也把研究成果做成真正被使用的系統。",
+  heroBody2: "其他「不務正業」的研究領域（也就是發表過學術論文的），還有音樂生成、串流影像增強、語音防偽等。",
   verseRef: "聖經・詩篇 19:1-4a",
   kResearch: "Research", researchTitle: "五個彼此相連的研究主軸",
   kCareer: "Experience", careerTitle: "經歷",
@@ -278,7 +340,8 @@ const EN = {
   affil1: "Assistant Professor", affil2: "Graduate Institute of AI Interdisciplinary Applied Technology", affil3: "College of Interdisciplinary Industry-Academia Innovation", affil4: "National Taiwan Normal University",
   ctaMail: "Email me",
   heroTitleA: "Teaching machines to hear — and speak — every language used in ", heroTitleKey: "Taiwan", heroTitleB: "",
-  heroBody: "My research spans speech recognition, speech synthesis, speech translation, speech enhancement and quality assessment, speaker/language recognition and diarization, and half-duplex / full-duplex conversational AI built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use.",
+  heroBody: "My interests span automatic speech recognition (ASR), speech synthesis (TTS), speech and machine translation (ST/MT), speech enhancement, speech separation, speaker/language recognition and diarization, speech quality assessment, and real-time half-duplex / full-duplex conversational speech systems built on large language models. Over the past decade and more — between academia and industry — I have worked on speech technology not only for Mandarin but also for low-resource languages such as Taiwanese Hokkien, Hakka, and the Formosan indigenous languages, and turned that research into systems people actually use.",
+  heroBody2: "My other, more “off-piste” lines of research — the ones that nonetheless produced peer-reviewed papers — include music generation, streaming video enhancement, and voice anti-spoofing.",
   verseRef: "The Bible・Psalm 19:1-4a",
   kResearch: "Research", researchTitle: "Five interconnected research directions",
   kCareer: "Experience", careerTitle: "Experience",
