@@ -115,7 +115,7 @@
             <div style="display:flex;flex-direction:column;gap:10px">
               <sc-for list="{{ highlights }}" as="h" hint-placeholder-count="1">
                 <div style="font-size:13px;line-height:1.85;color:rgba(232,230,221,.66);font-weight:300;text-wrap:pretty">
-                  <span style="color:#9ec9b2;opacity:.85;font-variant-numeric:tabular-nums">[{{ h.date }}]</span> {{ h.pre }}<strong style="font-weight:700;color:#c9e3d4">{{ h.venue }}</strong>{{ h.post }}
+                  <span style="color:#9ec9b2;opacity:.85;font-variant-numeric:tabular-nums">[{{ h.date }}]</span> {{ h.pre }}<strong style="font-weight:700;color:#c9e3d4">{{ h.venue }}</strong>{{ h.mid }}<strong style="font-weight:700;color:#c9e3d4">{{ h.track }}</strong>{{ h.post }}
                 </div>
               </sc-for>
             </div>
@@ -439,8 +439,8 @@ const AWARDS = [
 
 const HIGHLIGHTS = [
   { date: "2026/08/21",
-    zh: { pre: "我們的論文 “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” 已被 ", venue: "EMNLP 2026 (Main Conference)", post: " 接受！" },
-    en: { pre: "Our paper “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” has been accepted to ", venue: "EMNLP 2026 (Main Conference)", post: "!" } },
+    zh: { pre: "我們的論文 “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” 已被頂級會議 ", venue: "EMNLP 2026", mid: " 接受為 ", track: "Main Conference", post: " 論文！" },
+    en: { pre: "Our paper “Anchoring Speech with Semantics: A Multimodal Adapter Mechanism for Automatic Speech Recognition in Low-Resource Languages” has been accepted to the top-tier conference ", venue: "EMNLP 2026", mid: " as a ", track: "Main Conference", post: " paper!" } },
 ];
 const NEWS = [
   { date: "2026 / 07", zh: "客新聞：一秒生成客語童話與雙人 Podcast！「客家 GPT」超神功能曝光", en: "Hakka News: Hakka fairy tales and two-host podcasts in one second — HakkaGPT’s standout features revealed", url: "https://hakkanews.tw/2026/07/29/294068/" },
